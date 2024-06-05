@@ -14,6 +14,9 @@ body {
     flex-direction: column;
     background: linear-gradient(145deg, #432371, #f5a36c);
     color: #fff;
+    background: url(Goku.jpg) no-repeat center center fixed;
+    background-size: cover;
+
 }
 
 h1{

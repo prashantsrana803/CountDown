@@ -11,6 +11,15 @@ const updateCountDown = (deadline) => {
     const currentTime = new Date();
     const timeDifference = deadline - currentTime;  //milliseconds
  
+    if (timeDifference <= 0) {
+        days.textContent = "00";
+        hours.textContent = "00";
+        mins.textContent = "00";
+        secs.textContent = "00";
+        clearInterval(interval);  // Stop the timer
+        return;
+    }
+
     // calculate days, hours, mins, secs from timeDiffernece 
     let calSecs = Math.floor(timeDifference  / 1000) % 60;
     let calMins = Math.floor(timeDifference  / 1000 / 60) % 60;
@@ -28,5 +37,5 @@ const countDown = (targetDate) => {
     setInterval(() => updateCountDown(targetDate), 1000);
 }
 
-const targetDate = new Date("June 10 2024 07:00");
+const targetDate = new Date("June 10 2024 07:00:00");
 countDown(targetDate);
